@@ -53,7 +53,7 @@ export default function WeatherSearch() {
           <p>Temperature: {Math.round(weather.temperature)}C</p>
           <p>Humidity: {weather.humidity}%</p>
           <p>Wind: {weather.wind}km/h</p>
-          <img src={weather.icon} alt="NOT FOUND" />
+          <img src={weather.icon} alt="LOADING..." />
         </ul>
       </div>
     );
