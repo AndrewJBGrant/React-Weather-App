@@ -1,24 +1,8 @@
 .App {
-  text-align: center;
+  max-width: 600px;
+  margin: 30px auto
 }
 
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #4a4c50;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 /*
 @keyframes icons {
   from {
@@ -30,9 +14,14 @@
 } */
 
 .icons {
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   background-color: chocolate;
   display: flex;
   justify-content: space-evenly;
+}
+.icons h1 {
+  font-size:36px;
+  color:  #0B5ED7;
+  font-family: monospace;
 }

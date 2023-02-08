@@ -14,14 +14,14 @@ function App() {
             size={48}
             animate={true}
           />
-          <ReactAnimatedWeather
-            icon="PARTLY_CLOUDY_DAY"
+            <ReactAnimatedWeather
+            icon="SNOW"
             color="goldenrod"
             size={48}
             animate={true}
           />
           <ReactAnimatedWeather
-            icon="SNOW"
+            icon="PARTLY_CLOUDY_DAY"
             color="goldenrod"
             size={48}
             animate={true}
