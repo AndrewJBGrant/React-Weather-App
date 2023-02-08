@@ -1,24 +1,28 @@
 import React, { useState } from "react";
 import axios from "axios";
+import FormatDate from "./FormatDate";
 
-export default function WeatherSearch() {
+export default function WeatherSearch(props) {
   const [city, setCity] = useState("");
-  const [loaded, setLoaded] = useState(false);
   // useState starts at null because we have no temp yet
-  const [weather, setWeather] = useState(null);
+  const [weather, setWeather] = useState({ready: false});
 
   function displayWeather(response) {
     // loaded now === true because the apiCall has worked and displayWeather has gotten a response
-    setLoaded(true);
     setWeather({
       //  set weather from apiCall as Object!!
-      name: response.data.name,
+      ready: true,
+      country: response.data.sys.country,
+      city: response.data.name,
+      date: new Date(response.data.dt * 1000),
+      coordinates: response.data.coord,
       temperature: response.data.main.temp,
       wind: response.data.wind.speed,
+      description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
     });
-    // console.log(response.data.name);
+    console.log(response.data);
     // console.log(response.data.main.temp);
     // console.log(response.data.wind.speed);
   }
@@ -29,7 +33,7 @@ export default function WeatherSearch() {
     let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
     let units = "metric";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
-    console.log(apiUrl);
+    //console.log(apiUrl);
     axios.get(apiUrl).then(displayWeather);
   }
 
@@ -44,18 +48,18 @@ export default function WeatherSearch() {
     </form>
   );
 
-  if (loaded) {
+  if (weather.ready) {
     return (
       <div>
         {form}
-        <ul>
-          <strong> {weather.name} </strong>
-          <p>Temperature: {Math.round(weather.temperature)}C</p>
-          <p>Humidity: {weather.humidity}%</p>
-          <p>Wind: {weather.wind}km/h</p>
+          <strong> {weather.city}  </strong>
+          <em>{Math.round(weather.temperature)}˚C</em>
           <img src={weather.icon} alt="LOADING..." />
-        </ul>
-      </div>
+          <p>{weather.description}</p>
+          <p>Humidity: {weather.humidity}%</p>
+          <p>Date: <FormatDate date={weather.date} /> </p>
+          <p>Wind: {weather.wind}km/h</p>
+        </div>
     );
   } else {
     return form;
