@@ -7,6 +7,7 @@ function App() {
 
     <div className="App">
       <div className="icons">
+         <h1>Weather App</h1>
         <ReactAnimatedWeather
           icon="CLEAR_DAY"
           color="goldenrod"
@@ -26,7 +27,6 @@ function App() {
           animate={true}
         />
       </div>
-     <h1>Weather App</h1>
      <WeatherSearch />
     </div>
   );
