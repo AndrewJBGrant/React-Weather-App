@@ -6,30 +6,7 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <div className="icons">
-          <h1>Weather App</h1>
-          <ReactAnimatedWeather
-            icon="CLEAR_DAY"
-            color="#ff8e25"
-            size={48}
-            animate={true}
-          />
-            <ReactAnimatedWeather
-            icon="SNOW"
-            color="#ff8e25"
-            size={48}
-            animate={true}
-          />
-          <ReactAnimatedWeather
-            icon="PARTLY_CLOUDY_DAY"
-            color="#ff8e25"
-            size={48}
-            animate={true}
-          />
-        </div>
-
-        <WeatherSearch defaultCity="Berlin"/>
-
+        <WeatherSearch defaultCity="Berlin" />
       </div>
     </div>
   );

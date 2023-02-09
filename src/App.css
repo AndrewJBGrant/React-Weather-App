@@ -13,15 +13,3 @@
   }
 } */
 
-.icons {
-  padding-top: 30px;
-  padding-bottom: 30px;
-  background-color: #0d2237;
-  display: flex;
-  justify-content: space-evenly;
-}
-.icons h1 {
-  font-size:36px;
-  color:  #ff8e25;
-  font-family: monospace;
-}

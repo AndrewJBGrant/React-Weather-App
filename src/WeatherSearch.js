@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import WeatherInfo from "./WeatherInfo";
+import Header from "./Header";
 import "./WeatherSearch.css";
 
 export default function WeatherSearch(props) {
@@ -56,6 +57,9 @@ export default function WeatherSearch(props) {
   if (weather.ready) {
     return (
       <div className="weather-search">
+        <div className="header">
+        <Header />
+        </div>
         {form}
         <WeatherInfo data={weather} />
       </div>
