@@ -10,24 +10,26 @@ function App() {
           <h1>Weather App</h1>
           <ReactAnimatedWeather
             icon="CLEAR_DAY"
-            color="goldenrod"
+            color="#ff8e25"
             size={48}
             animate={true}
           />
             <ReactAnimatedWeather
             icon="SNOW"
-            color="goldenrod"
+            color="#ff8e25"
             size={48}
             animate={true}
           />
           <ReactAnimatedWeather
             icon="PARTLY_CLOUDY_DAY"
-            color="goldenrod"
+            color="#ff8e25"
             size={48}
             animate={true}
           />
         </div>
+
         <WeatherSearch defaultCity="Berlin"/>
+
       </div>
     </div>
   );

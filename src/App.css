@@ -16,12 +16,12 @@
 .icons {
   padding-top: 30px;
   padding-bottom: 30px;
-  background-color: chocolate;
+  background-color: #0d2237;
   display: flex;
   justify-content: space-evenly;
 }
 .icons h1 {
   font-size:36px;
-  color:  #0B5ED7;
+  color:  #ff8e25;
   font-family: monospace;
 }

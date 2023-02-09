@@ -18,7 +18,7 @@
   padding: 0;
 }
 
-.weather-search li {
+.weather-search p {
   font-size: 16px;
   font-weight: 100;
   line-height: 19px;
@@ -47,4 +47,3 @@
   line-height: 1;
   top: -34px;
 }
-
