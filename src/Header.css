@@ -1,12 +1,30 @@
-.icons {
+.header-main h1 {
+  font-size:36px;
+  color:  #ff8e25;
+  font-family: monospace;
+  margin-left: 24px;
+
+}
+
+.header-main {
+  /* border: 2px solid yellow; */
   padding-top: 20px;
-  padding-bottom: 20px;
+
   background-color: #0d2237;
   display: flex;
   justify-content: space-evenly;
 }
-.icons h1 {
-  font-size:36px;
-  color:  #ff8e25;
-  font-family: monospace;
+
+form {
+padding-right: 250px;
+padding-bottom: 8px;
+}
+
+form input {
+  border-radius: 6px;
+  
+}
+
+.button  {
+  color: #ff8e25;
 }

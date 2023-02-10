@@ -4,7 +4,7 @@ import ReactAnimatedWeather from "react-animated-weather";
 
 export default function Header() {
 return(
-  <div className="icons">
+  <div className="header-main">
           <h1>Weather App</h1>
           <ReactAnimatedWeather
             icon="CLEAR_DAY"

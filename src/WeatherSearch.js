@@ -48,8 +48,8 @@ export default function WeatherSearch(props) {
   }
 
   let form = (
-    <form className="form" onSubmit={handleSubmit}>
-      <input type="search" placeholder="enter a city.." onChange={updateCity} />
+    <form className="header-main" onSubmit={handleSubmit}>
+      <input type="search" placeholder="Enter a city.." onChange={updateCity} />
       <input type="submit" className="btn btn-primary" value="Search" />
     </form>
   );
@@ -57,9 +57,8 @@ export default function WeatherSearch(props) {
   if (weather.ready) {
     return (
       <div className="weather-search">
-        <div className="header">
         <Header />
-        </div>
+
         {form}
         <WeatherInfo data={weather} />
       </div>
