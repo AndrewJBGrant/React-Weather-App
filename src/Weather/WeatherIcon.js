@@ -14,10 +14,10 @@ export default function weatherIcon(props) {
     "04n": "CLOUDY",
     "09d": "RAIN",
     "09n": "RAIN",
-    "10d": "RAINY",
-    "10n": "RAINY",
-    "11d": "RAINY",
-    "11n": "RAINY",
+    "10d": "RAIN",
+    "10n": "RAIN",
+    "11d": "RAIN",
+    "11n": "RAIN",
     "13d": "SNOW",
     "13n": "SNOW",
     "50d": "FOG",
@@ -28,7 +28,7 @@ export default function weatherIcon(props) {
      icon={codeMap[props.code]}
             color="#ff8e25"
             size={props.size}
-            animate={false}
+            animate={true}
   />
   );
 }

@@ -1,11 +1,23 @@
-import React, { useState } from "react";
-import WeatherIcon from "./WeatherIcon";
+import React, { useState, useEffect } from "react";
 import "./WeatherForecast.css";
+import WeatherForecastDay from "./WeatherForecastDay";
 import Axios from "axios";
 
 export default function WeatherForecast(props) {
   let [loaded, setLoaded] = useState(false);
   let [forecast, setForecast] = useState(false);
+
+
+// Using useEffect here when props.coordinates changes (we search for a different city)
+// setLoaded changes to false so it re runs handleResponse function
+useEffect(() => {
+  setLoaded(false)
+}, [props.coordinates]);
+
+
+
+
+
 
   // This response.data only exists within this function!!!
   // Add useState
@@ -25,22 +37,25 @@ export default function WeatherForecast(props) {
     return (
       <div className="WeatherForecast">
         <div className="row">
-          <div className="col">
-            <div className="forecast-day">{forecast[0].dt}</div>
-            <WeatherIcon code={forecast[0].weather[0].icon} size={50} />
-            <div className="forecast-temps">
-              <span className="temp-max">{forecast[0].temp.max}°</span>
-              <span className="temp-min">{forecast[0].temp.min}°</span>
+          {/* // Here we take the array forecast (which is a state) and map through it to create a dailyForecast */}
+          {forecast.map(function (dailyForecast, index) {
+            if (index < 5) {
+            return (<div className="col" key={index}>
+              {/* Non dynamic way <WeatherForecastDay data={forecast[0]} /> better to take the dailyForecast array */}
+              <WeatherForecastDay data={dailyForecast} />
             </div>
-          </div>
+            );
+            }
+          })}
         </div>
       </div>
     );
   } else {
-    let apiKey = "7059cb165caa3316bff682d263a01b1e";
+    let apiKey = "73a00877081bd43422bdee0f3022beb5";
     let longitude = props.coordinates.lon;
     let latitude = props.coordinates.lat;
-    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+    // api call here needs lat and lon to get more sophisticated data, added &units=metric to convert the temp into celsius
 
     Axios.get(apiUrl).then(handleResponse);
     return null;
