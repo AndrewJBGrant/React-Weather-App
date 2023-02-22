@@ -1,5 +1,5 @@
 import "./App.css";
-import WeatherSearch from "./WeatherSearch";
+import WeatherSearch from "./Weather/WeatherSearch";
 import ReactAnimatedWeather from "react-animated-weather";
 
 function App() {
