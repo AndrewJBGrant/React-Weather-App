@@ -1,28 +1,23 @@
 .weather-search {
   font-family: arial, sans-serif;
   border: 1px solid #dadde1;
-  border-radius: 4px;
-  color: rgb(135, 135, 135);
+  border-radius: 6px;
+  color: rgb(111, 111, 111);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
 }
 
-
- .weather-search p {
-  font-size: 16px;
-  font-weight: 100;
-  line-height: 19px;
-  list-style: none;
-  /* margin: 0;
-  padding: 0; */
+.form {
+  text-align: center;
+  padding: 40px;
 }
 
-.weather-search canvas {
-  margin: 10px auto;
+input {
+  border: 0cm;
+  border-bottom: solid;
 }
 
-.weather-search .unit {
-  color: rgb(33, 33, 33);
-  font-size: 16px;
-  font-weight: 400;
-  position: relative;
-  line-height: 1;
+input.btn {
+ font-weight: 700;
+
 }

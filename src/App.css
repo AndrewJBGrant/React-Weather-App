@@ -1,6 +1,12 @@
 .App {
-  max-width: 600px;
-  margin: 30px auto
+  /* max-width: 600px; */
+  margin: 30px auto;
+  width: 50%;
+
+
+}
+*:focus {
+    outline: none;
 }
 
 /*

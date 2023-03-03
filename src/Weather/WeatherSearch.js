@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import WeatherInfo from "./WeatherInfo";
-import Header from "../Header";
+//import Header from "../Header";
 import "./WeatherSearch.css";
 import WeatherForecast from "./WeatherForecast";
 
@@ -49,20 +49,22 @@ export default function WeatherSearch(props) {
   }
 
   let form = (
-    <form className="header-main" onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}>
       <input type="search" placeholder="Enter a city.." onChange={updateCity} />
-      <input type="submit" className="btn btn-primary" value="Search" />
+      <input type="submit" className="btn" value="Search" />
     </form>
   );
 
   if (weather.ready) {
     return (
-      <div className="weather-search">
-        <Header />
 
+      <div className="weather-search">
+         <div className="form">
         {form}
+        </div>
+        {/* <Header /> */}
         <WeatherInfo data={weather} />
-        <WeatherForecast  coordinates={weather.coordinates}/>
+        <WeatherForecast coordinates={weather.coordinates} />
       </div>
     );
   } else {

@@ -1,8 +1,18 @@
 .WeatherForecast {
   text-align: center;
+  padding-bottom: 40px;
 }
 
 .temp-min {
-  opacity: 0.8;
+  opacity: 1;
   margin-left: 5px;
+}
+
+.temp-max {
+  font-weight: 200;
+  color: black;
+}
+
+.forecast-day {
+  font-weight: 900;
 }

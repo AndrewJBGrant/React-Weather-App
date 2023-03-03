@@ -38,7 +38,7 @@ useEffect(() => {
       <div className="WeatherForecast">
         <div className="row">
           {/* // Here we take the array forecast (which is a state) and map through it to create a dailyForecast */}
-          {forecast.map(function (dailyForecast, index) {
+          {forecast.map(function(dailyForecast, index) {
             if (index < 5) {
             return (<div className="col" key={index}>
               {/* Non dynamic way <WeatherForecastDay data={forecast[0]} /> better to take the dailyForecast array */}
