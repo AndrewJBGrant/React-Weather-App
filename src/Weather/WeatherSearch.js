@@ -1,11 +1,23 @@
-import React, { useState } from "react";
+import React, { createContext, useState } from "react";
 import axios from "axios";
 import WeatherInfo from "./WeatherInfo";
 //import Header from "../Header";
 import "./WeatherSearch.css";
 import WeatherForecast from "./WeatherForecast";
+import ReactSwitch from "react-switch";
+
+export const ThemeContext = createContext(null);
 
 export default function WeatherSearch(props) {
+const [theme, setTheme] = useState("dark");
+
+  const toggleTheme = () => {
+setTheme((current) => (current === "light" ? "dark" : "light"));
+  };
+
+
+
+
   const [city, setCity] = useState(props.defaultCity);
   // useState starts at null because we have no temp yet
   const [weather, setWeather] = useState({ ready: false });
@@ -57,15 +69,18 @@ export default function WeatherSearch(props) {
 
   if (weather.ready) {
     return (
-
-      <div className="weather-search">
+ <ThemeContext.Provider value={{ theme, toggleTheme}}>
+      <div className="weather-search" id={theme}>
          <div className="form">
         {form}
+        <ReactSwitch onChange={toggleTheme} checked={theme === "dark"}/>
         </div>
         {/* <Header /> */}
+
         <WeatherInfo data={weather} />
         <WeatherForecast coordinates={weather.coordinates} />
       </div>
+      </ThemeContext.Provider>
     );
   } else {
     search();

@@ -8,7 +8,8 @@
 }
 
 .form {
-  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
   padding: 40px;
 }
 
@@ -20,4 +21,29 @@ input {
 input.btn {
  font-weight: 700;
 
+}
+
+
+#dark {
+  background-color: #1E1E1E;
+  color: rgb(246, 240, 240);
+}
+
+#dark .temp-max {
+  color: rgb(246, 242, 242);
+  font-weight: 900;
+}
+
+#dark .WeatherInfo .temperature {
+  font-weight: bold;
+  color: rgb(246, 242, 242);
+  font-size: 64px;
+  line-height: 64px;
+  margin-left: 5px;
+  font-weight: 400;
+
+}
+
+#light {
+  background-color: #FFFFFF;
 }
