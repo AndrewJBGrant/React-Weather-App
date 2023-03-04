@@ -2,9 +2,14 @@
   font-family: arial, sans-serif;
   border: 1px solid #dadde1;
   border-radius: 6px;
-  color: rgb(111, 111, 111);
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  color: rgb(105, 105, 105);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
 
+.toggle {
+  display: flex;
 }
 
 .form {
@@ -19,19 +24,44 @@ input {
 }
 
 input.btn {
- font-weight: 700;
+  font-weight: 700;
+}
 
+#dark .temp-max {
+  color: rgb(246, 240, 240);
+  font-weight: bold;
 }
 
 
 #dark {
-  background-color: #1E1E1E;
+  /* background-color: #1E1E1E; */
+  background: rgb(78, 87, 87);
+  background: radial-gradient(
+    circle,
+    rgba(78, 87, 87, 1) 22%,
+    rgba(85, 81, 72, 1) 100%
+  );
+  color: rgb(246, 240, 240);
+  border-bottom: rgb(246, 240, 240) solid;
+}
+
+#dark input.field {
+  background-color: rgb(75, 84, 84);
+}
+
+#dark input.field {
   color: rgb(246, 240, 240);
 }
 
-#dark .temp-max {
-  color: rgb(246, 242, 242);
-  font-weight: 900;
+#dark input::placeholder {
+  font-weight: bolder;
+  font-size: larger;
+  /* opacity: 0.5; */
+  color: rgb(246, 240, 240);
+}
+
+#dark input.btn {
+  color: rgb(246, 240, 240);
 }
 
 #dark .WeatherInfo .temperature {
@@ -41,9 +71,8 @@ input.btn {
   line-height: 64px;
   margin-left: 5px;
   font-weight: 400;
-
 }
 
 #light {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }

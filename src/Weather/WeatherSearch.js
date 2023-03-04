@@ -62,7 +62,7 @@ setTheme((current) => (current === "light" ? "dark" : "light"));
 
   let form = (
     <form onSubmit={handleSubmit}>
-      <input type="search" placeholder="Enter a city.." onChange={updateCity} />
+      <input className="field" type="search" placeholder="Enter a city.." onChange={updateCity} />
       <input type="submit" className="btn" value="Search" />
     </form>
   );
@@ -73,7 +73,10 @@ setTheme((current) => (current === "light" ? "dark" : "light"));
       <div className="weather-search" id={theme}>
          <div className="form">
         {form}
+        <div className="toggle">
+        <label>{theme === "light" ? "Light Mode" : "Dark Mode"}</label>
         <ReactSwitch onChange={toggleTheme} checked={theme === "dark"}/>
+        </div>
         </div>
         {/* <Header /> */}
 
